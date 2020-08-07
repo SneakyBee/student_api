@@ -95,6 +95,7 @@ class Student
         return $this->grades;
     }
 
+
     public function addGrade(Grade $grade): self
     {
         if (!$this->grades->contains($grade)) {
