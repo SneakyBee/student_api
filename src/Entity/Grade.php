@@ -10,7 +10,15 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *      collectionOperations={"get","post",
+ *          "get_global_average"={
+ *              "path"="/grades/global_average",
+ *              "controller"="GetGlobalAverageController::class"
+ *          }
+ *      },
+ *      itemOperations={"get","put","patch","delete"}
+ * )
  * @ORM\Entity(repositoryClass=GradeRepository::class)
  */
 class Grade

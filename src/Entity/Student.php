@@ -11,8 +11,16 @@ use Doctrine\Common\Collections\Collection;
 use App\Entity\Grade;
 
 /**
- * @ApiResource()
- * @ORM\Entity(repositoryClass=StudentRepository::class)
+ * @ApiResource(
+ *      collectionOperations={"get","post"},
+ *      itemOperations={"get","put","patch","delete",
+ *          "get_average"={
+ *              "method"="GET",
+ *              "path"="/get_student_average/{id}",
+ *              "controller"="GetGlobalAverageController::class"
+ *  }}
+ * )
+ * @ORM\Entity(repositoryClass=GradeRepository::class)
  */
 class Student
 {
