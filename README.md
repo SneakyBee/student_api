@@ -3,7 +3,7 @@
 </a></p>
 
 # student_api
-Test technique UbiTransport with API Platform
+UbiTransport's technical test done with API Platform
 
 Installation
 ------------
