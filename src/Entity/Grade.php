@@ -55,7 +55,7 @@ class Grade
 
     public function __construct()
     {
-        $this->student_id = new ArrayCollection();
+        
     }
 
 

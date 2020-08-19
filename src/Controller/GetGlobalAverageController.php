@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\Grade;
+use App\Repository\GradeRepository;
 
 class GetGlobalAverageController
 {
@@ -17,10 +18,10 @@ class GetGlobalAverageController
      *      methods={"GET"}
      * )
      */
-    public function getGlobalAverage(EntityManagerInterface $em)
+    public function getGlobalAverage(GradeRepository $repo)
     {
         // faut récupérer toute les notes et faire une moyenne 
-        $globalAverage = $em->getRepository(Grade::class)->getGlobalAverage();
+        $globalAverage = $repo->getGlobalAverage();
 
         return new JsonResponse($globalAverage);
         
@@ -33,9 +34,9 @@ class GetGlobalAverageController
      *      methods={"GET"}
      * )
      */
-    public function getStudentAverage($id, EntityManagerInterface $em)
+    public function getStudentAverage($id, GradeRepository $repo)
     {
-        $studentAverage = $em->getRepository(Grade::class)->getStudentAverage($id);
+        $studentAverage = $repo->getStudentAverage($id);
 
         return new JsonResponse($studentAverage);
         
