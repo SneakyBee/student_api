@@ -20,7 +20,7 @@ use App\Entity\Grade;
  *              "controller"="GetGlobalAverageController::class"
  *  }}
  * )
- * @ORM\Entity(repositoryClass=GradeRepository::class)
+ * @ORM\Entity(repositoryClass=StudentRepository::class)
  */
 class Student
 {
@@ -47,7 +47,7 @@ class Student
     private $birth_date;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Grade", mappedBy="student")
+     * @ORM\OneToMany(targetEntity="App\Entity\Grade", mappedBy="student", cascade={"remove"})
      * @Groups("student:read")
      */
     private $grades;
