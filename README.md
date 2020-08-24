@@ -73,7 +73,7 @@ All request can be done with the api_platform interface or with those url
 
 * Get average of a student 
     * Method: GET
-    * Url: base_url/get_student_average/{id} (student_id)
+    * Url: base_url/get_student_average/(student_id)
 
 * Get average of all student 
     * Method: GET
